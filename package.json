@@ -1,0 +1,60 @@
+{
+  "name": "geminicopilot",
+  "displayName": "Gemini-Copilot",
+  "description": "this is code generator entension",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "geminicopilot.helloWorld",
+        "title": "code syntax"
+      },
+      {
+        "command": "geminicopilot.changeApiKey",
+        "title": "Change Gemini Copilot API Key"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "geminicopilot.changeApiKey",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "geminicopilot.helloWorld",
+        "key": "ctrl+shift+a",
+        "mac": "cmd+shift+a",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "pnpm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "node-fetch": "^3.3.2"
+  }
+}
