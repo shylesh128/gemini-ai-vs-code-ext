@@ -4,15 +4,15 @@ const axios = require("axios");
 const API_KEY_KEY = "geminicopilot.apiKey";
 const YOUR_API_ENDPOINT = "http://localhost:3001/api/aichat";
 
-function debounce(func, delay) {
-  let timer;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, delay);
-  };
-}
+// function debounce(func, delay) {
+//   let timer;
+//   return function (...args) {
+//     clearTimeout(timer);
+//     timer = setTimeout(() => {
+//       func.apply(this, args);
+//     }, delay);
+//   };
+// }
 
 async function activate(context) {
   let apiKey = context.globalState.get(API_KEY_KEY);
@@ -198,7 +198,7 @@ async function activate(context) {
   //         }
   //       }
   //     }, debounceDelay)
-  //   );
+  //   ); try
 
   context.subscriptions.push(
     helloWorldDisposable,
